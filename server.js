@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var PORT = 3001;
 
+var middleware = require('./middleware.js');
+
 //app.get(route, function(request, response))
 /*app.get('/', function(request, response){
 	console.log('Request Made to root directory (\'/\')')	
@@ -9,16 +11,6 @@ var PORT = 3001;
 });
 */
 
-var middleware = {
-	requireAuthentication: function(request, response, next){
-		console.log('private route hit');
-		next();
-	},
-	logger: function(request, response, next){
-		console.log('Request: [' + new Date().toString() + '] ' +  request.method + ' ' + request.originalUrl);
-		next()
-	}	
-}
 
 //app.use(middleware.requireAuthentication);
 app.use(middleware.logger);
