@@ -4,6 +4,7 @@ var PORT = process.env.PORT || 3001;
 
 var middleware = require('./middleware.js');
 
+//adding change
 //app.get(route, function(request, response))
 /*app.get('/', function(request, response){
 	console.log('Request Made to root directory (\'/\')')	
